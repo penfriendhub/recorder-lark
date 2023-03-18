@@ -1,0 +1,45 @@
+.obsidian
+.trash
+target/
+.flattened-pom.xml
+maven-repo/
+docker-compose.yml
+
+LICENSE
+*.http
+
+### Node Module
+node_modules
+package-lock.json
+yarn.lock
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

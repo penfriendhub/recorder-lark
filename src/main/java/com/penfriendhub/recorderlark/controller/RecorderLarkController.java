@@ -2,6 +2,7 @@ package com.penfriendhub.recorderlark.controller;
 
 import com.lark.oapi.sdk.servlet.ext.ServletAdapter;
 import com.penfriendhub.recorderlark.service.RecorderLarkMessageService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,11 @@ public class RecorderLarkController {
     private RecorderLarkMessageService larkMessageService;
     @Resource
     private ServletAdapter servletAdapter;
+
+    @GetMapping("ping")
+    public String ping () {
+        return "pong";
+    }
 
     @PostMapping("event")
     public void event(HttpServletRequest request, HttpServletResponse response) throws Throwable {
