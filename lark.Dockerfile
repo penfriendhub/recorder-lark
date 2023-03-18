@@ -10,4 +10,4 @@ LABEL MAINTAINER="unickcheng" GitHUb="https://github.com/penfriendhub/recorder-l
 WORKDIR /app
 COPY --from=builder /app/target/recorder-lark-*.jar ./recorder-lark.jar
 ENTRYPOINT ["java", "-jar", "recorder-lark.jar", "--spring.profiles.active=prod"]
-HEALTHCHECK --interval=15s --timeout=2s CMD curl -f http://localhost:${SERVER_PORT:-"19091"}/lark/ping || exit 1
+HEALTHCHECK --interval=15s --timeout=2s CMD curl -f http://localhost:${SERVER_PORT:-"19091"}/ping || exit 1

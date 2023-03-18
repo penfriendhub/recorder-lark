@@ -1,6 +1,5 @@
 package com.penfriendhub.recorderlark.service;
 
-import com.lark.oapi.core.utils.Jsons;
 import com.lark.oapi.event.EventDispatcher;
 import com.lark.oapi.service.im.v1.ImService;
 import com.lark.oapi.service.im.v1.model.P2MessageReceiveV1;
@@ -38,7 +37,7 @@ public class RecorderLarkMessageService {
                 .onP2MessageReceiveV1(new ImService.P2MessageReceiveV1Handler() {
                     @Override
                     public void handle(P2MessageReceiveV1 event)  {
-                        System.out.println(Jsons.DEFAULT.toJson(event));
+                        // System.out.println(Jsons.DEFAULT.toJson(event));
                         LarkMessageEvent larkMessageEvent =  new LarkMessageEvent(event);
                         if (isEventValid(larkMessageEvent)) {
                             messageRecorder(larkMessageEvent);
