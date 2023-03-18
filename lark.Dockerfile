@@ -2,7 +2,7 @@
 FROM maven:3.8-openjdk-11-slim AS builder
 WORKDIR /app
 COPY . ./
-RUN mvn dependency:go-offline
+RUN mvn dependency:go-offline && mvn package
 
 # step 2: build recorder-lark image
 FROM openjdk:11-jre-slim
