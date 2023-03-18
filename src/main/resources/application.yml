@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:19091}
+
+spring:
+  redis:
+    host: ${REDIS_HOST:}
+    port: ${REDIS_PORT:}
+    password: ${REDIS_PASS:}
+    connect-timeout: 3000
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
+# Please define in the environment variable
+lark:
+  verification-token: ${LARK_TOKEN:}
+  encrypt-key: ${LARK_ENCRYPT_KEY:}
+  app-id: ${LARK_APP_ID:}
+  app-secret: ${LARK_APP_SECRET:}
