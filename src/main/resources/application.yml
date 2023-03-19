@@ -20,3 +20,6 @@ lark:
   encrypt-key: ${LARK_ENCRYPT_KEY:}
   app-id: ${LARK_APP_ID:}
   app-secret: ${LARK_APP_SECRET:}
+
+demo:
+  token: ${DEMO_TOKEN:"K12345plmOJN6060DeMoToKeN"}

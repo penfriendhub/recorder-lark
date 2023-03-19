@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.time.Duration;
+import java.util.List;
 
 /**
  * @author unickcheng
@@ -15,6 +16,10 @@ import java.time.Duration;
 public class RedisHandlerTemplate<T> {
     @Resource
     RedisTemplate<String, T> redisTemplate;
+
+    public List<T> data (String key) {
+        return redisTemplate.opsForList().range(key, 0, -1);
+    }
 
     public void push (String key, T value) {
         redisTemplate.opsForList().leftPush(key, value);
